@@ -1,0 +1,363 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --main-font: 'Lato', sans-serif;
+    --heading-font: 'Poppins', sans-serif;
+    --heading-color: #224c89;
+    --background-light: #f6f6ee;
+    --background-dark: #89939b;
+    --hover-color: #8e7680;
+}
+
+/* Body allg. */
+
+body {
+    background-color: var(--background-light);
+}
+
+/* Header */
+
+.topBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 3.5rem;
+    background-color: var(--heading-color);
+}
+
+#logo img {
+    height: 5rem;
+    width: auto;
+}
+
+.search-container {
+    /* gpt */
+    position: relative;
+    max-width: 500px;
+    margin: 0 1rem;
+}
+
+.search-container i {
+    /* gpt */
+    position: absolute;
+    left: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--heading-color);
+    pointer-events: none;
+}
+
+#search-bar {
+    /* ChatGPT Vorlage, aber einige Werte selber abgeändert zu rem statt px und dann gestalterisch angepasst */
+    padding: 0.5rem 1rem 0.5rem 2.5rem;
+    border: 1px solid var(--background-dark);
+    border-radius: 1.8rem;
+    font-size: 0.9rem;
+    background-color: var(--background-light);
+}
+
+.icons {
+    display: flex;
+    gap: 2.5rem;
+    padding-left: 1rem;
+    align-items: center;
+}
+
+.icons .icon i {
+    /* animation from chatgpt */
+    font-size: 1.8rem;
+    color: var(--background-light);
+    transition: color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.icons .icon i:hover {
+    color: var(--hover-color);
+    transform: scale(1.2);
+}
+
+/* Dark Mode Styling im darkmode.css */
+
+.main-nav {
+    background-color: var(--background-dark);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.443);
+}
+
+#mainNav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#mainNav a {
+    transition: transform 0.4s ease;
+    padding: 0.5rem;
+}
+
+#mainNav a:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 6px rgb(60, 60, 60);
+    border-radius: 0.5rem;
+}
+
+.nav-list {
+    margin: 1rem 2rem;
+    font-family: var(--main-font);
+    font-weight: 400;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.nav-list a {
+    text-decoration: none;
+    display: block;
+    /* GPT suggestion */
+    color: var(--background-light);
+    cursor: pointer;
+}
+
+/* Hamburger für Mobile im hamburger.css und hamburger.js */
+
+/* Main Start */
+
+#wilkommen {
+    padding: 1.5rem;
+    margin: 1rem 0;
+}
+
+h1 {
+    font-family: var(--heading-font);
+    font-weight: 400;
+    font-size: 2.8rem;
+    color: var(--heading-color);
+    text-align: center;
+}
+
+h3 {
+    font-family: var(--heading-font);
+    font-size: 1rem;
+    font-weight: inherit;
+}
+
+#wilkommen h3 {
+    text-align: center;
+    letter-spacing: 0.05rem;
+}
+
+.text h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+
+}
+
+/* Hero-Slider styling ist im carousel.css Javascript im carousel.js */
+
+
+/* Produkte Raster */
+
+#flex-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.produkte-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem;
+    gap: 1em;
+    margin: 2rem auto;
+}
+
+.figure {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.figure img {
+    width: 90%;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+    box-shadow: 1px 4px 8px #00000033;
+}
+
+.figure img:hover {
+    transform: scale(1.05);
+    box-shadow: 2px 8px 16px #0000004d
+}
+
+figcaption {
+    padding: 0.3rem;
+    margin: 1rem 0;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.4em;
+}
+
+figure a {
+    /*gpt */
+    text-decoration: none;
+    display: inline-block;
+    color: inherit;
+}
+
+/* text-blöcke (mithilfe von chatGpt) */
+
+.grid-container {
+    width: 80%;
+    margin: 2.5rem auto;
+}
+
+.text-block {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "text image";
+    gap: 1.25rem;
+    align-items: start;
+    padding: 2rem;
+}
+
+.text-block.reverse {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: "image text";
+    gap: 1.25rem;
+    align-items: start;
+}
+
+.text-block img {
+    grid-area: image;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 1rem;
+    margin-top: 0.8rem;
+}
+
+.text-block .text {
+    grid-area: text;
+    margin-right: 1.5rem;
+}
+
+.text-block.reverse .text {
+    margin-left: 1.5rem;
+}
+
+.text p {
+    font-family: var(--main-font);
+    line-height: 1.5rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.09rem;
+    font-weight: 300;
+    text-align: justify;
+    /*overflow-wrap: break-word;*/
+}
+
+/* Footer */
+
+footer {
+    padding: 2rem;
+    background-color: var(--background-dark);
+    font-family: var(--main-font);
+    font-size: 1.2em;
+}
+
+#foot-nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    color: var(--background-light);
+
+}
+
+.foot-link a {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.4s ease;
+    display: inline-block;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.foot-link a:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 6px rgb(60, 60, 60);
+}
+
+@media (max-width: 45rem) {
+
+    .search-container {
+        display: none;
+    }
+
+    .produkte-grid {
+    display: grid;
+    gap: 0.5rem;
+    padding: 1rem;
+    width: 95%;
+}
+
+    .text-block,
+    .text-block.reverse {
+        grid-template-columns: 1fr;
+        grid-template-areas: "image" "text";
+        justify-items: start;
+        padding: 0.5rem 0;
+        width: 100%;
+    }
+
+    .text-block img,
+    .text-block.reverse img {
+        max-width: 100%;
+        margin: 0 0 0.5rem 0;
+    }
+
+    .text-block .text,
+    .text-block.reverse .text {
+        margin: 0;
+    }
+
+    .text-block p,
+    .text-block.reverse p {
+        text-align: left;
+    }
+
+    .figure {
+        max-width: 100%;
+    }
+
+    figcaption {
+        font-size: 1em;
+    }
+
+    .icons {
+        padding: 0.5rem;
+        gap: 0.8rem;
+    }
+
+    .icons .icon i {
+        font-size: 1rem;
+    }
+
+    #foot-nav {
+        display: block;
+        text-align: center;
+    }
+
+    .foot-link:last-child {
+        padding: 0.4rem 0.5rem;
+    }
+    
+}
